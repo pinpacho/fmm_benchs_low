@@ -1,0 +1,24 @@
+# Linux/WSL-only dependencies. NOTE: this file is informational - setup.sh
+# installs these with special handling; a plain `pip install -r` is NOT enough:
+#
+#   pyfmmlib      installed by setup.sh with --no-build-isolation --no-binary
+#                 (PyPI wheels/sdist are compiled against numpy 1.x and fail to
+#                 import under numpy 2.x; the source build against the venv's
+#                 numpy fixes it; needs gfortran + meson/ninja/mako).
+#
+#   fmm2dpy       PyPI has 0.0.5 (Nov 2022) with wheels only for CPython
+#                 3.6-3.11 (numpy 1.x ABI) and no sdist, so on Python >=3.12
+#                 pip finds nothing. setup.sh tries pip first, then clones
+#                 https://github.com/flatironinstitute/fmm2d, runs `make lib`,
+#                 and builds the four f2py extensions with build_fmm2dpy.py
+#                 (fmm2d's own setup.py needs numpy.distutils, removed in
+#                 numpy 2.x / Python 3.12).
+#
+# Installable directly (Section 6, MNN-H2 experiment):
+tensorflow-cpu
+tf-keras
+# Build helpers for the pyfmmlib source build:
+meson-python
+meson
+ninja
+mako

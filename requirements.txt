@@ -1,0 +1,15 @@
+# Core scientific stack + notebook tooling (cross-platform: Linux/WSL + Windows)
+numpy>=1.26
+scipy>=1.10
+matplotlib>=3.6
+pandas>=2.0
+h5py>=3.9
+jupyter
+nbconvert
+ipykernel
+# numba: used only for the (optional) jitted Laplace direct-sum aside.
+# Python 3.13 needs numba>=0.61; the notebook [SKIP]s gracefully if unavailable.
+numba>=0.60
+# The library under study (PyPI: https://pypi.org/project/stablefmmpy/).
+# For benchmarking a local checkout instead, run: FMMBENCH_DEV=1 bash setup.sh
+stablefmmpy>=0.1.0

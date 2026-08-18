@@ -192,12 +192,3 @@ Expected full-run wall time: ~15–25 min in WSL (MNN-H2 training dominates);
   multiscale neural network based on hierarchical nested bases*, Research in the
   Mathematical Sciences 6, 2019. [arXiv:1808.02376](https://arxiv.org/abs/1808.02376) ·
   [github.com/ywfan/mnn-H2](https://github.com/ywfan/mnn-H2)
-
-## Provenance
-
-Part of the `pruebas_claude` wideband-FMM research workspace (Mitacs project).
-`stablefmmpy` is installed from PyPI by default; set `FMMBENCH_DEV=1` to benchmark
-a local checkout. The five survey notes referenced by the research module
-(`../compilated_FMM.md`, `../scallfmm.md`, …) are UTF-16LE PDF extractions kept in
-the parent folder of the workspace; the notebook reads them opportunistically and
-falls back to the linked citations when cloned standalone.
